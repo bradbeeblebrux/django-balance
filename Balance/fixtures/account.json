@@ -1,0 +1,42 @@
+[
+   {
+      "model" : "Balance.account",
+      "fields" : {
+         "name" : "בנק לאומי",
+         "_class" : "LeumiBankParser"
+      },
+      "pk" : 1
+   },
+   {
+      "model" : "Balance.account",
+      "fields" : {
+         "name" : "בנק דיסקונט",
+         "_class" : "DiscountBankParser"
+      },
+      "pk" : 2
+   },
+   {
+      "pk" : 3,
+      "fields" : {
+         "name" : "לאומי קארד",
+         "_class" : "LeumiCardParser"
+      },
+      "model" : "Balance.account"
+   },
+   {
+      "fields" : {
+         "name" : "ויזה כאל",
+         "_class" : "VisaCalParser"
+      },
+      "pk" : 4,
+      "model" : "Balance.account"
+   },
+   {
+      "model" : "Balance.account",
+      "fields" : {
+         "name" : "ישראכרד",
+         "_class" : "IsraCardParser"
+      },
+      "pk" : 5
+   }
+]

@@ -1,0 +1,52 @@
+{% load humanize %}
+{% load cycle from future %}
+{% load i18n %}
+{% load l10n %}
+
+<html dir='rtl'>
+    <head>
+        <link rel='stylesheet' href='/static/admin/css/base.css' />
+        <link rel='stylesheet' href='/static/admin/css/forms.css' />
+    </head>
+    <body>
+      <form action="" method="post" enctype="multipart/form-data">
+	    {% csrf_token %}
+        <table border=1>
+            <tr>
+                <th style="text-align:right">#</th>
+                <th style="text-align:right">תאריך</th>
+                <th style="text-align:right">תיאור</th>
+                <th style="text-align:right">אסמכתא</th>
+                <th style="text-align:right">סכום</th>
+                <th style="text-align:right">קטגוריה</th>
+                <th style="text-align:right">הערות</th>
+            </tr>
+            {% for item in temp_list %}
+            <tr class="{% cycle 'row1' 'row2' %}">
+                <td>{{ forloop.counter }}</td>
+                <td><input type="hidden" name=date_{{forloop.counter0}} value="{{item.date}}">{{item.date}}</input></td>
+                <td><input type="hidden" name=desc_{{forloop.counter0}} value="{{item.desc}}">{{item.desc}}</input></td>
+                <td><input type="hidden" name=reference_{{forloop.counter0}} value="{{item.reference}}">{{item.reference}}</input></td>
+                <td align="right" dir="ltr">
+                    <input type="hidden" name=amount_{{forloop.counter0}} value="{{item.amount}}">
+                    {% if item.amount < 0%}
+                        <font color="red">
+                    {%else%}
+                        <font color="green">
+                    {%endif%}
+                        {{item.amount|intcomma|localize}}
+                        </font>
+                    </input>
+                </td>
+                <td> {{ item.category }} {{item.category.errors }}</td>
+                <td> {{ item.comment }} </td>
+            </tr>
+            {% endfor %}
+            {{ form.field_errors }}
+            {{ form.non_field_errors }}
+        </table>
+        {% trans "Submit" as submit %}
+        <input type="submit" value="{{submit}}" />
+      </form>
+    </body>
+</html>

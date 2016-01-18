@@ -1,0 +1,41 @@
+{% load humanize %}
+{% load cycle from future %}
+{% load i18n %}
+{% load l10n %}
+<!doctype html>
+<html dir="rtl">
+    <head>
+        <link rel='stylesheet' href='/static/admin/css/base.css' />
+        <link rel='stylesheet' href='/static/admin/css/forms.css' />
+    </head>
+    <body>
+           <table border=1>
+            <tr>
+                <th style="text-align:right">#</th>
+                <th style="text-align:right">קטגוריה</th>
+                <th style="text-align:right">סכום</th>
+            </tr>
+           {% for cat, total in summary.items %}
+            <tr class="{% cycle 'row1' 'row2' %}">
+                <td>{{ forloop.counter }}</td>
+                <td>{{cat}}</td>
+                <td>{{total|intcomma|localize}}</td>
+            </tr>
+           {% endfor %}
+            <tr>
+                <td>סה"כ</td>
+                <td></td>
+                <td>
+                    {% if total < 0 %}
+                    <font color="red">
+                    {%else%}
+                    <font color="green">
+                    {%endif%}
+                    {{total|intcomma|localize}}
+                    </font>
+                </td>
+            </tr>
+           </table>
+
+    </body>
+</html>

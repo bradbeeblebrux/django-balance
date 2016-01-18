@@ -1,0 +1,13 @@
+<html dir='rtl'>
+<body>
+{% if account_list %}
+    <ul>
+    {% for account in account_list %}
+        <li><a href="/balance/{{ account.id }}/">{{ account.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Accounts are available.</p>
+{% endif %}
+</body>
+</html>
