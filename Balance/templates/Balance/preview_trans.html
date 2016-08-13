@@ -1,5 +1,4 @@
 {% load humanize %}
-{% load cycle from future %}
 {% load i18n %}
 {% load l10n %}
 
@@ -12,15 +11,15 @@
       <form action="" method="post" enctype="multipart/form-data">
 	    {% csrf_token %}
         <table border=1>
-            <tr>
-                <th style="text-align:right">#</th>
+            <thead>
+                <th style="text-align:right" class="th">#</th>
                 <th style="text-align:right">תאריך</th>
                 <th style="text-align:right">תיאור</th>
                 <th style="text-align:right">אסמכתא</th>
                 <th style="text-align:right">סכום</th>
                 <th style="text-align:right">קטגוריה</th>
                 <th style="text-align:right">הערות</th>
-            </tr>
+            </thead>
             {% for item in temp_list %}
             <tr class="{% cycle 'row1' 'row2' %}">
                 <td>{{ forloop.counter }}</td>

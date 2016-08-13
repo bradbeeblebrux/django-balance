@@ -19,8 +19,8 @@ class Account(models.Model):
 
 class Transaction(models.Model):
     date = models.DateField('תאריך פעולה')
-    reference = models.CharField('אסמכתא', max_length=40)
-    description = models.CharField('תאור', max_length=100)
+    reference = models.CharField('אסמכתא', db_index=True, max_length=40)
+    description = models.CharField('תאור', db_index=True, max_length=100)
 #    full_amount = models.DecimalField('סכום מלא', decimal_places=2, max_digits=8)
 #    current_amount = models.DecimalField('סכום לתשלום', decimal_places=2, max_digits=8)
     amount = models.DecimalField('סכום', decimal_places=2, max_digits=8)
@@ -37,7 +37,7 @@ class Transaction(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField('תיאור', max_length=20)
+    name = models.CharField('תיאור', db_index=True, max_length=20)
 
     def __unicode__(self):
         return self.name
@@ -48,8 +48,8 @@ class Category(models.Model):
 
 
 class Transaction_to_Category(models.Model):
-    category = models.ForeignKey(Category, verbose_name='ו')
-    transaction = models.ForeignKey(Transaction)
+    category = models.ForeignKey(Category, db_index=True, verbose_name='קטגוריה')
+    transaction = models.ForeignKey(Transaction, db_index=True, verbose_name='פעולה')
     comment = models.TextField('הערות', blank=True)
 
     def __unicode__(self):
@@ -57,8 +57,8 @@ class Transaction_to_Category(models.Model):
 
 
 class Word_to_Category(models.Model):
-    category = models.ForeignKey('Category')
-    word = models.CharField('תיאור', max_length=100)
+    category = models.ForeignKey('Category', db_index=True)
+    word = models.CharField('תיאור', db_index=True, max_length=100)
 
     def __unicode__(self):
         return "%s - %s" % (self.category.name, self.word)
