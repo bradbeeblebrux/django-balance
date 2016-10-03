@@ -224,7 +224,6 @@ def IsraCardParser(filename):
         date = worksheet.cell_value(curr_row, 0)
         desc = worksheet.cell_value(curr_row, 1) #.encode('utf-8')
         reference = worksheet.cell_value(curr_row, 4)
-        pdb.set_trace()
         amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
         tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
                      'desc': desc,

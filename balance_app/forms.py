@@ -36,4 +36,5 @@ class PreviewTransForm(forms.Form):
 
             self.fields['category_%s' % i] = forms.ModelChoiceField(
                 queryset=all_categories,
-                required=True, initial=selected_category, )
+                required=True,
+                initial=selected_category, )
