@@ -5,6 +5,7 @@ import datetime
 import xml.etree.ElementTree as ET
 from lxml import etree
 from django.utils.translation import ugettext as _
+import pdb
 
 
 class ParsedTransaction:
@@ -206,7 +207,38 @@ def VisaCalParser(filename):
 
     return trans_list
 
+def IsraCardParser(filename):
+    workbook = xlrd.open_workbook(filename.name, file_contents=filename.read())
+    worksheet = workbook.sheet_by_index(0)
+    curr_row = 6
+    trans_list = []
 
+    while curr_row < worksheet.nrows:
+        row = worksheet.row(curr_row)
+        if all([not x.value for x in row]):
+            break
+
+        date_cell = worksheet.cell(curr_row, 0)
+        if len(date_cell.value) == 0:
+            break
+        date = worksheet.cell_value(curr_row, 0)
+        desc = worksheet.cell_value(curr_row, 1) #.encode('utf-8')
+        reference = worksheet.cell_value(curr_row, 4)
+        pdb.set_trace()
+        amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
+        tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
+                     'desc': desc,
+                     'reference': reference,
+                     'amount': amount,
+                     }
+
+        t = ParsedTransaction(**tmp_trans)
+        trans_list.append(t)
+        curr_row += 1
+
+    return trans_list
+
+"""
 def IsraCardParser(filename):
     trans_list = []
     parser = etree.HTMLParser(encoding='utf-8')
@@ -221,6 +253,42 @@ def IsraCardParser(filename):
         desc = tds[1].text
         full_amount = float(tds[2].getchildren()[1].text)
         amount = float(tds[3].getchildren()[1].text)
+        if amount != full_amount:
+            desc = ', '.join([desc, tds[2].text, tds[5].text])
+
+        tmp_trans = {
+            'date': datetime.datetime.strptime(tds[0].text, '%d/%m/%Y').strftime('%Y-%m-%d'),
+            'desc': desc,
+            'reference': tds[4].text,
+            'amount': -1*amount,
+        }
+
+        t = ParsedTransaction(**tmp_trans)
+        trans_list.append(t)
+
+    return trans_list
+
+"""
+
+def IsraCardParser_old(filename):
+    trans_list = []
+    parser = etree.HTMLParser(encoding='iso-8859-8')
+    tree = etree.parse(filename, parser)
+    table = tree.xpath("//table")[1]
+
+    rows_counter = 0
+    for row in table.getchildren():
+        if rows_counter < 4:
+            rows_counter += 1
+            continue
+
+        tds = row.xpath(".//td")
+        if tds[0].text is None:
+            break
+        
+        desc = tds[1].text
+        full_amount = float(tds[2].text)
+        amount = float(tds[3].text)
         if amount != full_amount:
             desc = ', '.join([desc, tds[2].text, tds[5].text])
 
