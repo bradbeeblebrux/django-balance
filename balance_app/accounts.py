@@ -161,6 +161,35 @@ def LeumiCardParser(filename):
 
     return trans_list
 
+def LeumiCardForeignParser(filename):
+    trans_list = []
+    ns = {'leumicard': 'urn:schemas-microsoft-com:office:spreadsheet'}
+    root = ET.fromstring(filename.read())
+    worksheet = root.find('{urn:schemas-microsoft-com:office:spreadsheet}Worksheet').find('{urn:schemas-microsoft-com:office:spreadsheet}Table')
+    rows = worksheet.findall('leumicard:Row', ns)
+    for row in rows[1:]:
+        cells = row.findall('leumicard:Cell', ns)
+
+        desc = cells[2][0].text
+        amount = float(cells[6][0].text)
+        foreign_amount = float(cells[4][0].text)
+        currency = cells[5][0].text
+        remark = ''
+        if cells[7][0].text is not None:
+            remark = cells[7][0].text
+        desc = ', '.join([desc, cells[3][0].text, cells[4][0].text, cells[5][0].text, remark])
+
+        tmp_trans = {'date': datetime.datetime.strptime(cells[0][0].text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d'),
+                     'desc': desc,
+                     'reference': cells[2][0].text,
+                     'amount': -1 * amount,
+                     }
+
+        t = ParsedTransaction(**tmp_trans)
+        trans_list.append(t)
+
+    return trans_list
+
 
 def VisaCalParser(filename):
     trans_list = []
