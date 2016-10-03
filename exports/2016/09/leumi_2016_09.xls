@@ -1,0 +1,456 @@
+<HTML xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40" dir="RTL"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.dirLTRorRTLNum{direction:ltr;background-color:#000} body{background-color:#fff} .text-right{text-align:right} .text-left{text-align:left} .text-center{text-align:center} .ltr{direction:ltr} .rtl{direction:rtl} .lblLastLogin{font-weight:bold;font-family:Arial;font-size:8pt} .PageTitle{font-family:Arial;font-weight:bold;font-size:11pt;color:#000090} .ShowInExcel{display:block!important;visibility:visible!important} .font11Excel{font-size:11px !important} .showPanel{display:none !important;visibility:hidden} .hiddenPanel{display:block;visibility:visible} #PmmModePanel{font-family:Arial !important;font-weight:bold !important;font-size:11pt !important;color:#000090 !important;padding-bottom:20px} #CheckImagesPanel{display:none;visibility:hidden} #ExportCheckImagesPanel{display:block;visibility:visible} .hiddenExcelPanel{display:block;visibility:visible} .printPanel,.HideInExcel{display:none !important;visibility:hidden !important} .notShowInExcel{display:none !important;visibility:hidden !important} .dataTable tr td,.dataTable tr th,.dataTable1 tr td,.thereIsOnlyTodayActivity tr td,.homeDataTable tr td,.homeDataTable tr th,.workFlowTrExcel,#dtObligoValue tr th,#dtObligoValue tr td,#dtObligoValueTwo tr th,#dtObligoValueTwo tr td,#ctlActivityTable tr td,#ctlOtherActivityTable tr td,#ctlActivityTable tr th,#ctlOtherActivityTable tr th,#ctlRegularTransactions tr td{border:.5pt solid gray !important} #printArea{text-align:right;color:#333;font-family:Arial,Helvetica,sans-serif;font-size:8pt} .dataTable tr th,table.dataTable tr.header td,table.homeDataTable tr.header td,.dataTable1 tr td,tr.header,.homeDataTable tr th{font-weight:bold !important;background-color:#9cf} table.dataTable tr.footer td,table.homeDataTable tr.footer td,table.filter tr td,table.SummaryBox tr td,table.smallfilter tr td,.workFlowEndMassageExcel,.workFlowLableExcel,.boldInExcel{font-weight:bold !important} .tbl-obligo tr td,.dataTable1 tr td,.dataTable tr td,.thereIsOnlyTodayActivity tr td,.homeDataTable tr td,.SummaryBox tr td,table.smallfilter tr td,.sectionHeader,.workFlowTrExcel,.workFlowExcelTableMessage,.straightenToRightExcel{text-align:right} .Summary_lable2{text-align:right} .vanishInExcel{display:none !important} .tbl-obligo tr td,.dataTable1 tr td,.dataTable tr td,.TodayActivityTableSecond tr td,.thereIsOnlyTodayActivity tr td,.homeDataTable tr td,.workFlowEndMassageExcel,.workFlowTrExcel,.nowrapExcel{white-space:nowrap} .workFlowEndMassageExcel{height:40pt;vertical-align:top} .rightAndNowrapExcel{text-align:right !important;white-space:nowrap} .RightA{text-align:right!important;direction:rtl !important} .emptyLineForExcel{display:block !important} #accountTd,#TransactionTypeTd,#FronDateTd,#ToDateTd{text-align:right} #pagingTr,#accountTitleTr,#btnDisplay{display:none;visibility:hidden} #ddlAccounts_m_ddl,#dtFromDate,#dtToDate,#dtToDate_textBox,#dtFromDate_textBox{text-align:right !important} #displayBalancesLegalMessageExcel{display:block !important} #pnlBalanceTable tr td{text-align:right !important;white-space:nowrap} .dirRtl{direction:rtl !important} .alignRightOrLeft{text-align:right !important} .DirectionRTL{direction:rtl} #ctlSaving tr td{direction:rtl !important} #pnlMasterDataGrid div table tr td{font-weight:bold} #pnlMasterDataGrid div table tr td.gridGroup table tr.item td,#pnlMasterDataGrid div table tr td.gridGroup table tr.alternatingItem td{font-weight:normal !important} .totalLineExtendedSummary{border:.5pt solid gray !important;font-weight:bold !important;background-color:#9cf} .rightNowrapLtr td{text-align:right;white-space:nowrap;direction:rtl !important} #lblRenewalCDTd{direction:rtl !important} #ctlPaidOrUnPaidChecks homeDataTableWide tr th,#ctlPaidOrUnPaidChecks homeDataTableWide tr.header td a{font-weight:bold !important;background-color:#9cf} #ctlPeriodicBalancesTableAssets1 tr.item td,#ctlPeriodicBalancesTableAssets1 tr.alternatingItem td,#ctlPeriodicBalancesTableAssets2 tr.item td,#ctlPeriodicBalancesTableAssets2 tr.alternatingItem td,#ctlPeriodicBalancesTableDebit1 tr.item td,#ctlPeriodicBalancesTableDebit1 tr.alternatingItem td,#ctlPeriodicBalancesTableDebit2 tr.item td,#ctlPeriodicBalancesTableDebit2 tr.alternatingItem td{font-weight:normal !important} #ctlPeriodicBalancesTableAssets1 tr td.boldInExcel,#ctlPeriodicBalancesTableDebit1 tr td.boldInExcel,#ctlPeriodicBalancesTableAssets2 tr td.boldInExcel,#ctlPeriodicBalancesTableDebit2 tr td.boldInExcel{font-weight:bold !important} #TR_Paging,#TR_printAll,#TR_ErrorMessege{display:none} Table.filterNoDirection{text-align:right;margin-bottom:15px;width:auto !important} Table.filterNoDirection TH{font-weight:normal;text-align:right} Table.filterNoDirection td{font-family:Arial,Helvetica,sans-serif;color:#505d65;text-align:right;font-weight:bold;vertical-align:middle;direction:rtl;white-space:nowrap} .detailsTr{padding-top:1px} Table.SummaryBoxNoDirection{margin-bottom:27px;width:auto !important;color:#000;white-space:nowrap} .DirectionExportRTL{direction:rtl} Table.SummaryBoxNoDirection td{white-space:nowrap} .Summary_lable{font-weight:bold;font-size:small;color:#000;text-align:right;direction:rtl;white-space:nowrap;padding-top:4px} .number_column{direction:ltr;white-space:nowrap;mso-number-format:"\#\,\#\#0\.00_ \;\[Red\]\\-\#\,\#\#0\.00\\ "} .number_ColumnForFooterInExcel{white-space:nowrap;mso-number-format:"\#\,\#\#0\.00_ \;\[Red\]\\-\#\,\#\#0\.00\\ ";font-weight:bold !important} .text_column{white-space:nowrap;mso-number-format:"\@";} .date_column{white-space:nowrap;mso-number-format:"Short Date";} .monthYear_column{white-space:nowrap;mso-number-format:"MM/yyyy";} .straightToBottom{vertical-align:bottom !important;} .original_width{white-space:nowrap;} .ExtendedActivityColume2,.ExtendedActivityColume3,.ExtendedActivityColume4,.ExtendedActivityColume5,.ExtendedActivityColume6,.ExtendedActivityColumnDate{direction:rtl;} .ExtendedActivityColume6,.ExtendedActivityColumnDate{mso-number-format:"Short Date";} H2.TableTitleBlue{font-size:10pt;display:inline;color:#203ca9 !important;} H2.TableTitle{font-size:8pt;display:inline;} .MainPageColumn5{direction:ltr;white-space:nowrap;mso-number-format:Standard;} .MainPageColumn1{direction:ltr;white-space:nowrap;mso-number-format:Standard;} .MainPageDirColumn1{direction:rtl;white-space:nowrap;mso-number-format:Standard;} .ltrExcel{direction:ltr !important;} .RedColor{color:#9E0000 !important;} .RedcolorBalance{color:#9E0000 !important;direction:ltr;} .cardTitle{font-weight:bold;font-size:small!important;color:#000;direction:rtl;} .MakeBoldTitleBlue{padding:0px !important;} .xSmallFontSize{vertical-align:middle !important;font-size:xx-small !important;} .padding-right30{padding-right:30px;} .gridExpanderUniqeClass{display:none;} .alignRightExcel{text-align:right !important;direction:rtl !important;} .TitleBoldInExcel{font-weight:bold !important;font-size:8pt;} .boldInExcel .balancePos{direction:ltr;color:#0078DA;font-size:20px;font-weight:bold;} .boldInExcel .balanceNeg{direction:ltr;color:#9E0000;font-size:20px;font-weight:bold;} .boldInExcel1{font-weight:bold;} #spnBalanceTotalDebitVal{color:#9e0000;} #spnBalanceTotalCreditVal{color:#0078da;} .balance_num_col{text-align:left;direction:rtl;padding-bottom:2px;} .balance_num_col .lblCurrentBalanceVal{direction:ltr;display:inline-block;margin-right:14px;} .balance_num_col .lblCurrentBalance{font:bold 14px arial;color:#505D65;display:inline-block;} .LoanSummaryBoxFontSize tr td,.LoanSummaryBoxFontSize h2{font-size:10px !important} .HideInHebrew{display:none;visibility:hidden;} .exlAccAlign{text-align:right;} .divAcc{direction:rtl;text-align:right;} .pageCreditLines .WorkSpaceBox table a{float:right;} .FontAriel{font-family:Arial;font-size:8pt;} .boldExport{font-weight:bold;} .workFlowStepWrapper{display:none !important;visibility:hidden !important;} #angularHeader,#angularFooter{display:none;} .gen_cont_bg{padding:0px !important;} [title~=Partial]{display:none;}
+</style></head><body><div class="Container"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td><div id=container1></div></td></tr><tr><td colspan="4" align=right class="PageTitle" nowrap>בנק לאומי - תנועות בחשבון</td></tr></table><br><form name="ctl00" method="post" action="../partial/PartialUC/UC_020/ExtendedActivity.aspx" id="ctl00">
+<div>
+
+
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl00'];
+if (!theForm) {
+    theForm = document.ctl00;
+}
+function //(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+<div id="printArea" align="right" class="pageExtendedActivity pageExtendedActivity"><span><span class="no-wrap">
+                                                                                </span></span><span id="campaignControlManager"></span><span><span class="no-wrap">
+                                                                                </span></span><input name="AjaxSaveAS" type="hidden" id="AjaxSaveAS" /><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+	<!-- Export Panel, Not Visible In Web [Start]-->
+    </span></span><div id="ExportDataFilterPanel" class="hiddenPanel specificForPrintVisible specificForPrintDirection">
+	<span><span class="no-wrap">	
+		</span></span><table id="ExportDataFilterBox" class="SummaryBoxNoDirection exportDataFilterForPrint" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td colspan="2" style="padding-top:1px;"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap"> חשבון:</span></span><span><span class="no-wrap">					
+					</span></span><span><span class="no-wrap">‎942-254606/28‎</span></span><span><span class="no-wrap">										
+				</span></span></td>
+			<td colspan="4" style="text-align:left;padding-top:1px;"><span><span class="no-wrap"> 
+					</span></span><span><span class="no-wrap">תנועה מסוג:</span></span><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">-- כל התנועות --</span></span><span><span class="no-wrap">
+			    </span></span></td>
+		</tr>
+		<tr>
+			<td id="tdExportDate" colspan="2" style="VISIBILITY:visible;"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">נכון לתאריך:</span></span><span><span class="no-wrap">					
+					</span></span><span><span class="no-wrap">03/10/2016</span></span><span><span class="no-wrap">										
+				</span></span></td>
+			<td colspan="4" style="text-align:left"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">תקופה:</span></span><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">בין תאריכים</span></span><span><span class="no-wrap">
+			    </span></span></td>
+		</tr>
+		<tr id="trExportDates">
+			<td colspan="2"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">מתאריך:</span></span><span><span class="no-wrap">					
+					</span></span><span><span class="no-wrap">01/09/2016</span></span><span><span class="no-wrap">										
+				</span></span></td>
+			<td colspan="4" style="text-align:left"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">עד תאריך:</span></span><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">30/09/2016</span></span><span><span class="no-wrap">
+			    </span></span></td>
+		</tr>
+		<tr id="trExportCreditAndBalances">
+			<td colspan="2"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">מסגרת אשראי:</span></span><span><span class="no-wrap">					
+					</span></span><span><span class="no-wrap">&#x200E;₪ 20,000.00&#x200E;</span></span><span><span class="no-wrap">										
+				</span></span></td>
+			<td colspan="4" style="text-align:left"><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">יתרה:</span></span><span><span class="no-wrap">
+					</span></span><span><span class="no-wrap">&#x200E;₪ 121,927.56&#x200E;</span></span><span><span class="no-wrap">
+			    </span></span></td>
+		</tr>
+		<tr>
+			<td colspan="6"><span><span class="no-wrap">&nbsp;</span></span></td>
+		</tr>
+	</table>
+	<span><span class="no-wrap">
+    </span></span>
+</div><span><span class="no-wrap">
+    <!-- Export Panel, Not Visible In Web [End]-->
+    
+    <!-- The Filter Box [Start] --> 
+    <div class="dirLTRorRTL">
+		</span></span><span><span class="no-wrap">
+	</div>  
+	<!-- The Filter Box [End] -->
+	
+	</span></span><span><span class="no-wrap">
+</span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">	
+	</span></span><table id="SummaryBox" class="SummaryBoxNoDirection printHidden" cellspacing="0" cellpadding="0" border="0" dir="rtl">
+</table>
+<span><span class="no-wrap">	
+	<table style="width:100%">
+		<tr class="showPanel">
+			<td >
+				</span></span><!img style="display:none;"  id="imgInfo" class="ErrInfoImgFloat" src="/eBanking/Partial/Themes/PremiumTopTabMenu/Images/icone_info.gif" style="border-width:0px;" /><span id="lblComment" class="rtl"></span><span><span class="no-wrap">
+			</td>
+			
+		</tr>
+	</table>	
+</span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+	</span></span><table id="WorkSpaceBox" class="WorkSpaceBox dataTableContainerAlign Full_Width" border="0" cellspacing="0" cellpadding="0">
+	<tr class="showPanel">
+		<td class="pedingBottom2 DirectionLTR"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="sectionHeader " dir="rtl"><span><span class="no-wrap">
+				<h2 ></span></span><span><span class="no-wrap"></h2>
+			</span></span></td>
+	</tr>
+	<tr>
+		<td><span><span class="no-wrap">			
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr id="messages1Up">
+	</tr>
+	<tr id="messages2Up">
+	</tr>
+	<tr class="showPanel">
+		<td><span><span class="no-wrap">
+				<div id="AnnotaionContainerError"></div>
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="text-right" dir="ltr"><span><span class="no-wrap">
+				<h2 class="Hidden">
+					</span></span><span><span class="no-wrap">טבלת תנועות בחשבון לחשבון: ‎942-254606/28‎</span></span><span><span class="no-wrap">
+				</h2>													
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="text-right" dir="ltr"><span><span class="no-wrap">								
+				</span></span><table class="dataTable" cellspacing="0" dir="rtl" class="dataTable" border="0" id="ctlActivityTable" style="border-collapse:collapse;">
+			<tr class="header">
+				<th scope="col"><a tabindex="1013" "javascript://(&#39;ctlActivityTable$ctl40$ctl07&#39;,&#39;&#39;)"><span title="לחץ למיון לפי שדה תאריך בסדר עולה">תאריך</span> <!img style="display:none;"  src = https://cache.bankleumi.co.il/eBanking/Partial/Themes/PremiumTopTabMenu/Images/sort_up.png alt='' border=0></a></th><th scope="col"><a tabindex="1015" "javascript://(&#39;ctlActivityTable$ctl40$ctl09&#39;,&#39;&#39;)">תיאור</a></th><th scope="col"><a tabindex="1017" "javascript://(&#39;ctlActivityTable$ctl40$ctl11&#39;,&#39;&#39;)"><span title="לחץ למיון לפי שדה אסמכתא בסדר עולה">אסמכתא</span></a></th><th scope="col"><a tabindex="1018" "javascript://(&#39;ctlActivityTable$ctl40$ctl12&#39;,&#39;&#39;)"><span title="לחץ למיון לפי שדה חובה בסדר עולה">חובה</span></a></th><th scope="col"><a tabindex="1019" "javascript://(&#39;ctlActivityTable$ctl40$ctl13&#39;,&#39;&#39;)"><span title="לחץ למיון לפי שדה זכות בסדר עולה">זכות</span></a></th><th class="nowrap" scope="col">יתרה בש"ח</th>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								30/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								בי.אם.סי.תוכ-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">9642</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="16897.81">16,897.81</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="123427.56">123,427.56</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								29/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001250" tabIndex=1020 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=1&seg=0&checkNumber=5001250&rowIndex=1&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      31101  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001250</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1600">1,600.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="106529.75">106,529.75</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								28/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001300" tabIndex=1021 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=2&seg=0&checkNumber=5001300&rowIndex=2&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      12132  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001300</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="800">800.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="108129.75">108,129.75</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								26/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001299" tabIndex=1022 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=3&seg=0&checkNumber=5001299&rowIndex=3&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      10814  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001299</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1520">1,520.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="108929.75">108,929.75</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								26/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001248" tabIndex=1023 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=4&seg=0&checkNumber=5001248&rowIndex=4&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      11102  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001248</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="150">150.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="110449.75">110,449.75</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								22/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								ישראכרט-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">20543</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1004.5">1,004.50</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="110599.75">110,599.75</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								21/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								העברה/הפקדה806
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">81012</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="351">351.00</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="111604.25">111,604.25</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								20/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001298" tabIndex=1024 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=5&seg=0&checkNumber=5001298&rowIndex=7&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      12622  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001298</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="351">351.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="111253.25">111,253.25</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								20/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								פרעון הלוואה
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">3094001</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="642.83">642.83</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="111604.25">111,604.25</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								20/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								ישראכרט-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">20543</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="7236.09">7,236.09</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="112247.08">112,247.08</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								20/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								ישראכרט-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">20543</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1308">1,308.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="119483.17">119,483.17</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								20/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								קצבת ילדים-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">13104</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="338">338.00</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="120791.17">120,791.17</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								18/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001249" tabIndex=1025 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=6&seg=0&checkNumber=5001249&rowIndex=12&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      11398  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001249</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="2000">2,000.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="120453.17">120,453.17</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								16/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001296" tabIndex=1026 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=7&seg=0&checkNumber=5001296&rowIndex=13&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      12539  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001296</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="290">290.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="122453.17">122,453.17</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								15/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001262" tabIndex=1027 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=8&seg=0&checkNumber=5001262&rowIndex=14&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      10806  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001262</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="14000">14,000.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="122743.17">122,743.17</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								15/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								<a "/ebanking/CreditCard/DisplayCreditCardActivity.aspx?MyeBank=true&PmmMode=false&index=2 &DuePayment=1" tabIndex="1028" title="לאומי ויזה י" >לאומי ויזה י</a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">884213</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="10597.76">10,597.76</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="136743.17">136,743.17</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								15/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								לאומי קארד ב-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">34685</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1326.25">1,326.25</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="147340.93">147,340.93</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								14/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								הראל בטוח-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">608</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="144">144.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="148667.18">148,667.18</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								14/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								החזרת חיוב
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">213306</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="15.3">15.30</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="148811.18">148,811.18</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								14/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								החזרת חיוב
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">213306</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="15.3">15.30</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="148795.88">148,795.88</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								11/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001174" tabIndex=1029 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=9&seg=0&checkNumber=5001174&rowIndex=20&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      10806  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001174</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="340">340.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="148780.58">148,780.58</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								11/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								<a "/ebanking/CreditCard/DisplayCreditCardActivity.aspx?MyeBank=true&PmmMode=false&index=3 &DuePayment=1" tabIndex="1030" title="לאומי ויזה י" >לאומי ויזה י</a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">892919</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="448.95">448.95</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="149120.58">149,120.58</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								11/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								<a "/ebanking/CreditCard/DisplayCreditCardActivity.aspx?MyeBank=true&PmmMode=false&index=4 &DuePayment=1" tabIndex="1031" title="לאומי ויזה י" >לאומי ויזה י</a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">852714</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="35">35.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="149569.53">149,569.53</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								11/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								כרטיסי אשראי-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">8547</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="325.83">325.83</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="149604.53">149,604.53</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								11/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								פניקס-ב.חיים-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">611</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="4587">4,587.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="149930.36">149,930.36</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								08/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001297" tabIndex=1032 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=10&seg=0&checkNumber=5001297&rowIndex=25&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      11102  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001297</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="150">150.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="154517.36">154,517.36</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								08/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								בנקט י     871
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">80904</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="600">600.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="154667.36">154,667.36</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								05/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								העברה ברשימה
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">46353</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="25417.88">25,417.88</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="155267.36">155,267.36</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								05/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								מכבי-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">25300</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="723.55">723.55</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="129849.48">129,849.48</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								05/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								מכבי-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">25300</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="175">175.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="130573.03">130,573.03</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								04/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001286" tabIndex=1033 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=11&seg=0&checkNumber=5001286&rowIndex=30&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      12504  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001286</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="360">360.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="130748.03">130,748.03</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								02/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001282" tabIndex=1034 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=12&seg=0&checkNumber=5001282&rowIndex=31&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      31101  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001282</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1200">1,200.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="131108.03">131,108.03</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								02/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								ישראכרט-י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">20543</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1089.97">1,089.97</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="132308.03">132,308.03</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								01/09/16
+							</td><td class="ActivityTableColumn1">
+								<a title="לחץ לצפייה בשיק מספר 5001285" tabIndex=1035 JavaScript://openPopupWindowCustomParams('/ebanking/Accounts/CheckImageViewer.aspx?index=1&cId=13&seg=0&checkNumber=5001285&rowIndex=33&isFromPmmMenu=False&isPmmRegistered=False','CheckImage','resizable=0,scrollbars=1,width=600,height=560,top=150','565','no') > שיק      10814  </a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">5001285</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="1900">1,900.00</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="133398">133,398.00</td>
+			</tr><tr class="item printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								01/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								העברה עתידית י
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">3709938</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum" x:num="370">370.00</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="135298">135,298.00</td>
+			</tr><tr class="alternatingItem printItem ExtendedActivity_ForPrint">
+				<td class="ExtendedActivityColumnDate DateUniqeClass dirLTRorRTL">
+								01/09/16
+							</td><td class="ActivityTableColumn1LTR no-wrap">
+								<a "#" onclick="javascript:SetFullModelDivVisible('popDescriptionData_divDragable','popDescriptionData_divBlockable','popDescriptionData_iFrameBlockable','True');javascript:OpenCommissionsDescriptionData('popDescriptionData_divDragable','עמל.ערוץ יש 23',this);return false;" tabIndex="1037" title="עמל.ערוץ יש 23" >עמל.ערוץ יש 23</a>
+							</td><td class="ReferenceNumberUniqeClass ExtendedActivityColume4">23</td><td class="AmountDebitUniqeClass number_column dirLTRorRTLNum" x:num="37.95">37.95</td><td class="AmountCreditUniqeClass number_column dirLTRorRTLNum">&nbsp;</td><td class="number_column dirLTRorRTLNum lspace5px" x:num="134928">134,928.00</td>
+			</tr>
+		</table><span><span class="no-wrap">	
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="workFlowStepPaddingTop_30" dir="rtl"><span><span class="no-wrap">
+				<h2></span></span><span><span class="no-wrap"></h2>
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="text-right"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="text-right"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr id="messages1Down">
+		<td class="dirLTRorRTL workFlowStepPaddingBottom_10 text-right rtl"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr id="messages2Down">
+		<td class="dirLTRorRTL"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="DirectionRTL"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td class="dirLTRorRTL"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr>
+		<td colspan="3"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">		
+			</span></span></td>
+	</tr>
+	<tr class="specificForPrintHidden">
+		<td class="workFlowStepPaddingTop_1 text-right ltr"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr class="specificForPrintHidden">
+		<td id="tdIban" class="workFlowStepPaddingTop_1 text-right"><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr class="specificForPrintHidden">
+		<td><span><span class="no-wrap">
+				</span></span><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+	<tr class="specificForPrintHidden">
+		<td><span><span class="no-wrap">
+				</span></span><a id="lnkForDepositChecks" autopostback="true" "javascript://(&#39;lnkForDepositChecks&#39;,&#39;&#39;)" style="visible: hidden"></a><span><span class="no-wrap">
+			</span></span></td>
+	</tr>
+</table>
+<span><span class="no-wrap">
+	
+		
+	
+	<div class="TemplateToolTip">
+		</span></span><span><span class="no-wrap">
+	</div>
+	<div class="specificForPrintHidden">
+		</span></span><span><span class="no-wrap">
+		</span></span><span><span class="no-wrap">
+		</span></span><span><span class="no-wrap">	
+		</span></span><span><span class="no-wrap">
+	</div>
+		
+</span></span><input name="hidSaveAsChoice" type="hidden" id="hidSaveAsChoice" value="EXCEL" /><span><span class="no-wrap"><!img style="display:none;"  id='logoForSave' src="https://cache.bankleumi.co.il/eBanking/Partial/Themes/PremiumTopTabMenu/Images/premium_logo.png" border='0' Class='saveVisible' /></span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+                                                                                </span></span><span><span class="no-wrap">
+                                                                            </span></span></div>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C21772F6" />
+	
+</div></form></div></body></html>
