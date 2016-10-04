@@ -18,6 +18,7 @@ class Account(models.Model):
 
 class Transaction(models.Model):
     date = models.DateField('תאריך פעולה')
+    charge_date = models.DateField('תאריך חיוב')
     reference = models.CharField('אסמכתא', db_index=True, max_length=40)
     description = models.CharField('תאור', db_index=True, max_length=100)
 #    full_amount = models.DecimalField('סכום מלא', decimal_places=2, max_digits=8)
@@ -28,7 +29,7 @@ class Transaction(models.Model):
     comment = models.TextField('הערות', blank=True)
 
     def __unicode__(self):
-        return "%s, %s, %s, %s, %s, %s" % (self.date, self.reference, self.description, self.owner.name, self.account.name, self.comment)
+        return "%s, %s, %s, %s, %s, %s, %s" % (self.date, self.charge_date, self.reference, self.description, self.owner.name, self.account.name, self.comment)
 
     @classmethod
     def get_years(cls):

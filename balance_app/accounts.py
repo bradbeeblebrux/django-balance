@@ -10,8 +10,9 @@ import pdb
 
 class ParsedTransaction:
 
-    def __init__(self, date, desc, reference, amount=0.0):
+    def __init__(self, date, charge_date, desc, reference, amount=0.0):
         self.date = date
+        self.charge_date = charge_date
         self.desc = desc
         self.reference = reference
         self.amount = amount
@@ -24,7 +25,7 @@ class ParsedTransaction:
     #     self.credit = kwargs.get('credit', 0.0)
 
     def __unicode__(self):
-        return "(%s, %s, %s, %.2f)" %(self.date, self.desc, self.reference, self.amount)
+        return "(%s, %s, %s, %.2f)" %(self.date, self.charge_date, self.desc, self.reference, self.amount)
 
     def __str__(self):
         return unicode(self).encode('utf-8')
@@ -57,6 +58,7 @@ def LeumiBankParser(filename):
             amount = float(amount_credit)
 
         tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%y').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(date, '%d/%m/%y').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': reference,
                      'amount': amount,
@@ -116,10 +118,13 @@ def DiscountBankParser(filename):
             break
 
         date = worksheet.cell_value(curr_row, 0)
+        # TODO: replace with real column for charge date
+        charge_date = worksheet.cell_value(curr_row, 0)
         desc = worksheet.cell_value(curr_row, 3)
         amount = float(worksheet.cell_value(curr_row, 5))
 
         tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': '',
                      'amount': amount,
@@ -151,6 +156,7 @@ def LeumiCardParser(filename):
             desc = ', '.join([desc, cells[3][0].text, cells[5][0].text, remark])
 
         tmp_trans = {'date': datetime.datetime.strptime(cells[0][0].text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(cells[1][0].text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': cells[2][0].text,
                      'amount': -1 * amount,
@@ -180,6 +186,7 @@ def LeumiCardForeignParser(filename):
         desc = ', '.join([desc, cells[3][0].text, cells[4][0].text, cells[5][0].text, remark])
 
         tmp_trans = {'date': datetime.datetime.strptime(cells[0][0].text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(cells[1][0].text, '%Y-%m-%dT00:00:00').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': cells[2][0].text,
                      'amount': -1 * amount,
@@ -194,6 +201,11 @@ def LeumiCardForeignParser(filename):
 def VisaCalParser(filename):
     trans_list = []
     tree = etree.HTML(filename.read())
+    # here we need to find the charge_date on the page level
+    # and apply it to all transactions in the page    
+    table = tree.xpath("//span[@id='lblTableBrief']")[0].getchildren()[4].getchildren()[0]
+    charge_date = table.text
+
     table = tree.xpath("//td[@id='tdCalGrid']")[0].getchildren()[0]
     for row in table.getchildren()[1]:
         tds = row.getchildren()
@@ -226,6 +238,7 @@ def VisaCalParser(filename):
 
         tmp_trans = {
                 'date': datetime.datetime.strptime(purchase_date, '%d/%m/%y').strftime('%Y-%m-%d'),
+                'charge_date': datetime.datetime.strptime(charge_date, '%m/%Y').strftime('%Y-%m-%d'),
                 'desc': desc,
                 'reference': reference,
                 'amount': -1*amount,
@@ -242,6 +255,9 @@ def IsraCardParser(filename):
     curr_row = 6
     trans_list = []
 
+    # first we pick the charge_date for all transactions
+    charge_date  = worksheet.cell_value(worksheet.nrows-2,2)
+
     while curr_row < worksheet.nrows:
         row = worksheet.row(curr_row)
         if all([not x.value for x in row]):
@@ -255,6 +271,7 @@ def IsraCardParser(filename):
         reference = worksheet.cell_value(curr_row, 4)
         amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
         tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(charge_date, '%d/%m/%y').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': reference,
                      'amount': amount,
@@ -266,37 +283,6 @@ def IsraCardParser(filename):
 
     return trans_list
 
-"""
-def IsraCardParser(filename):
-    trans_list = []
-    parser = etree.HTMLParser(encoding='utf-8')
-    tree = etree.parse(filename, parser)
-    table = tree.xpath("//table")[3].getchildren()[1]
-
-    for row in table.getchildren():
-        tds = row.xpath(".//td")
-        if tds[0].text is None:
-            break
-
-        desc = tds[1].text
-        full_amount = float(tds[2].getchildren()[1].text)
-        amount = float(tds[3].getchildren()[1].text)
-        if amount != full_amount:
-            desc = ', '.join([desc, tds[2].text, tds[5].text])
-
-        tmp_trans = {
-            'date': datetime.datetime.strptime(tds[0].text, '%d/%m/%Y').strftime('%Y-%m-%d'),
-            'desc': desc,
-            'reference': tds[4].text,
-            'amount': -1*amount,
-        }
-
-        t = ParsedTransaction(**tmp_trans)
-        trans_list.append(t)
-
-    return trans_list
-
-"""
 
 def IsraCardParser_old(filename):
     trans_list = []
@@ -322,6 +308,7 @@ def IsraCardParser_old(filename):
 
         tmp_trans = {
             'date': datetime.datetime.strptime(tds[0].text, '%d/%m/%Y').strftime('%Y-%m-%d'),
+            'charge_date': datetime.datetime.strptime(tds[0].text, '%d/%m/%Y').strftime('%Y-%m-%d'),
             'desc': desc,
             'reference': tds[4].text,
             'amount': -1*amount,
@@ -342,11 +329,12 @@ def PoalimBankParser(filename):
 
     while curr_row < worksheet.nrows:
         row = worksheet.row(curr_row)
-        print row
         if str(row) == str(empty_row):
             break
 
         date = xlrd.xldate.xldate_as_datetime(worksheet.cell_value(curr_row, 0), workbook.datemode)
+        # TODO: replace with real column for charge date
+        charge_date = date
         desc = worksheet.cell_value(curr_row, 1)
         reference = str(int(worksheet.cell_value(curr_row, 2)))
         debit = worksheet.cell_value(curr_row, 3)
@@ -365,6 +353,7 @@ def PoalimBankParser(filename):
 
 
         tmp_trans = {'date': date.strftime('%Y-%m-%d'),
+                     'charge_date': charge_date.strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': reference,
                      'amount': amount,

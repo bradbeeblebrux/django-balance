@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'balance_app'
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.dashboard, name='index'),
     url(r'^transaction/all$', views.transall, name='transall'),
     url(r'^transaction/add_from_file$', views.trans_add_from_file, name='load_from_file'),
     url(r'^transaction/preview_trans/(?P<key>preview\d+)/$', views.PreviewTransView, name='preview_trans'),

@@ -15,17 +15,8 @@ import pdb
 
 
 
-class IndexView(generic.ListView):
-    template_name = 'balance_app/index.html'
-
-    def get_queryset(self):
-        return Account.objects.all()
-
-#class TransAllListView(generic.ListView):
-#    template_name = 'balance_app/transall.html'
-#    def get_queryset(self):
-#        return Transaction.objects.all()
-
+def dashboard(request):
+	return render(request, "balance_app/dashboard.html")
 
 def transall(request):
     return render(request, "balance_app/transall.html", {"trans": Transaction.objects.all()})
@@ -38,10 +29,10 @@ def SummaryCategoryView(request, year=None, month=None):
     total = 0
 
     if year is not None:
-        _summary = _summary.filter(transaction__date__year=year)
+        _summary = _summary.filter(transaction__charge_date__year=year)
 
     if month is not None:
-        _summary = _summary.filter(transaction__date__month=month)
+        _summary = _summary.filter(transaction__charge_date__month=month)
 
     _summary = _summary.values('category__id', 'category__name').annotate(total=Sum('transaction__amount'))
     for t in _summary:
@@ -56,10 +47,10 @@ def SummaryCategoryPieChart(request, year=None, month=None):
     _summary = Transaction_to_Category.objects.all()
 
     if year is not None:
-        _summary = _summary.filter(transaction__date__year=year)
+        _summary = _summary.filter(transaction__charge_date__year=year)
 
     if month is not None:
-        _summary = _summary.filter(transaction__date__month=month)
+        _summary = _summary.filter(transaction__charge_date__month=month)
 
     _summary = _summary.values('category__id', 'category__name').annotate(total=Sum('transaction__amount'))
     for t in _summary:
@@ -122,6 +113,7 @@ def PreviewTransView(request, key):
 
             trans, created = Transaction.objects.get_or_create(
                 date=item['date'],
+                charge_date=item['charge_date'],
                 reference=item['reference'],
                 description=item['desc'],
                 amount=item['amount'],
