@@ -255,23 +255,57 @@ def IsraCardParser(filename):
     curr_row = 6
     trans_list = []
 
-    # first we pick the charge_date for all transactions
-    charge_date  = worksheet.cell_value(worksheet.nrows-2,2)
+    # we will populate this date at first for rows without charge_date
+    default_charge_date = "01/01/1900"
+    global_charge_date = None
+
+    # we start with processing local currenncy
+    # later moving to foreign currency
+    foreign_parser = False
 
     while curr_row < worksheet.nrows:
         row = worksheet.row(curr_row)
+        charge_date = default_charge_date
+
+        # col E empty is a sign of a line we shouldn't process
+        # first time we encounter is also an opportunity to pick up the global charge date
+        if len(worksheet.cell_value(curr_row, 4)) == 0:
+            #pdb.set_trace()
+            if global_charge_date is None:
+                global_charge_date = worksheet.cell_value(curr_row, 2)
+            curr_row += 1
+            continue
+
+        # blank line
         if all([not x.value for x in row]):
             break
 
         date_cell = worksheet.cell(curr_row, 0)
         if len(date_cell.value) == 0:
-            break
+            curr_row += 1
+            continue
         date = worksheet.cell_value(curr_row, 0)
-        desc = worksheet.cell_value(curr_row, 1) #.encode('utf-8')
-        reference = worksheet.cell_value(curr_row, 4)
-        amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
+        if (foreign_parser):
+            desc = worksheet.cell_value(curr_row, 2) #.encode('utf-8')
+        else:
+            desc = worksheet.cell_value(curr_row, 1) #.encode('utf-8')
+        if (foreign_parser == False):
+            reference = worksheet.cell_value(curr_row, 4)
+
+        try:
+            if (foreign_parser):
+                amount = -1 * float(worksheet.cell_value(curr_row, 4)[1:])
+                foreign_amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
+                charge_date = worksheet.cell_value(curr_row, 1)
+            else:
+                amount = -1 * float(worksheet.cell_value(curr_row, 3)[1:])
+        except UnicodeEncodeError:
+            foreign_parser = True
+            curr_row += 1
+            continue
+
         tmp_trans = {'date': datetime.datetime.strptime(date, '%d/%m/%Y').strftime('%Y-%m-%d'),
-                     'charge_date': datetime.datetime.strptime(charge_date, '%d/%m/%y').strftime('%Y-%m-%d'),
+                     'charge_date': datetime.datetime.strptime(charge_date, '%d/%m/%Y').strftime('%Y-%m-%d'),
                      'desc': desc,
                      'reference': reference,
                      'amount': amount,
@@ -281,6 +315,14 @@ def IsraCardParser(filename):
         trans_list.append(t)
         curr_row += 1
 
+    # now we iterrate over our trans_list, updating the charge_date with the global one
+    formatted_default_charge_date = datetime.datetime.strptime(default_charge_date, '%d/%m/%Y').strftime('%Y-%m-%d')
+    formatted_global_charge_date = datetime.datetime.strptime(global_charge_date, '%d/%m/%y').strftime('%Y-%m-%d')
+    idx = 0
+    for trans in trans_list:
+        if trans.charge_date == formatted_default_charge_date:
+            trans_list[idx].charge_date = formatted_global_charge_date
+        idx += 1
     return trans_list
 
 
