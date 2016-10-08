@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'elasticsearch',
     'balance_app.apps.BalanceAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',

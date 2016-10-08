@@ -7,6 +7,7 @@ from django.views import generic
 from django.utils import encoding
 from .models import Transaction, Owner, Account, Transaction_to_Category, Word_to_Category, Category, Excluded_Category
 from .forms import AddFromFileForm, PreviewTransForm
+from .indexing import index_all_dirty
 import json
 import datetime
 import accounts
@@ -135,6 +136,8 @@ def PreviewTransView(request, key):
 
         temp = "{0}</br></br>{1}</br></br>{2}".format(temp, temp_cat, temp_word)
         response = HttpResponse(temp, content_type="text/html; charset=utf-8")
+        # update ES
+        index_all_dirty()
             # response.write(upload_response)
         return response
 

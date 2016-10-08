@@ -17,6 +17,7 @@ class Account(models.Model):
 
 
 class Transaction(models.Model):
+    _id = models.CharField(null=True, max_length=20) # placeholder to store id in ES
     date = models.DateField('תאריך פעולה')
     charge_date = models.DateField('תאריך חיוב')
     reference = models.CharField('אסמכתא', db_index=True, max_length=40)
@@ -27,6 +28,7 @@ class Transaction(models.Model):
     owner = models.ForeignKey(Owner)
     account = models.ForeignKey(Account)
     comment = models.TextField('הערות', blank=True)
+    dirty = models.BooleanField(default=True, null=False)
 
     def __unicode__(self):
         return "%s, %s, %s, %s, %s, %s, %s" % (self.date, self.charge_date, self.reference, self.description, self.owner.name, self.account.name, self.comment)
