@@ -5,7 +5,9 @@ import datetime
 import xml.etree.ElementTree as ET
 from lxml import etree
 from django.utils.translation import ugettext as _
-import pdb
+import pdb, csv
+from django.conf import settings
+
 
 
 class ParsedTransaction:
@@ -138,6 +140,7 @@ def DiscountBankParser(filename):
 
 
 def LeumiCardParser(filename):
+
     trans_list = []
     ns = {'leumicard': 'urn:schemas-microsoft-com:office:spreadsheet'}
     root = ET.fromstring(filename.read())
@@ -405,5 +408,26 @@ def PoalimBankParser(filename):
         print t
         trans_list.append(t)
         curr_row += 1
+
+    return trans_list
+
+def BofaCSVParser(filename):
+    trans_list = []
+    _dir = settings.BALANCE_FILE_DIR + "/" + filename.name[5:9] + "/" + filename.name[10:12] + "/"
+    with open(_dir + filename.name) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            desc = row['Description']
+            amount = row['Amount']
+            date = datetime.datetime.strptime(row['Date'], '%m/%d/%Y').strftime('%Y-%m-%d')
+            tmp_trans = {'date': date,
+                         'charge_date': date,
+                         'desc': desc,
+                         'reference' : '',
+                         'amount': float(amount),
+                        }
+            t = ParsedTransaction(**tmp_trans)
+            trans_list.append(t)
+
 
     return trans_list

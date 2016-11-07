@@ -121,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Balance Files
+BALANCE_FILE_DIR = "/Users/django/dev/balance_exports"

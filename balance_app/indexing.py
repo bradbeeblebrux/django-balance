@@ -47,6 +47,7 @@ def serialize_model(transaction, accounts, owners):
 	obj['category'] = transaction.category
 	obj['account'] = accounts.get(id=transaction.account.id).name
 	obj['owner'] = owners.get(id=transaction.owner.id).name
+	obj['amount'] = float(obj['amount'])
 	return json.dumps(obj)
 
 
